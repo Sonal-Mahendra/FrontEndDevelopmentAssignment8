@@ -1,0 +1,18 @@
+
+<form (submit)="addTodo($event,task)">
+    <div class="form-group">
+  <label for="task">Todo:::</label>
+  <input type="text" class="form-control"id="task" #task >
+  <br/>
+  <button type="submit" class="btn btn-primary">Add</button>
+  </div>
+</form>
+
+<h3>Tasks</h3>
+<span *ngIf="todos.length===0">No Task Assigned</span>
+<table *ngIf="todos.length!==0" class="table table-bordered">
+  <td>Values</td>
+  <td>
+    <tr *ngFor="let value of todos">{{value}}</tr>
+  </td>
+</table>
